@@ -8,15 +8,16 @@ import { useRouter } from "next/navigation";
 
 const Menu = () => {
   const { showInput, setShowPanel } = useGlobalContext();
+
   const { setUser } = useGlobalContext();
   const router = useRouter();
 
   const handlerLogout = async () => {
     await logout(setUser, router);
-  };
+  };  
 
   return (
-    <div className="w-full h-[5rem] lg:h-[6rem] shdow bg-white  fixed bottom-0 z-50">
+    <div className="w-full h-[5rem] lg:h-[6rem] shdow bg-white fixed bottom-0  z-1000">
       <ul className="flex justify-center items-center gap-[10px] w-full h-full">
         <li>
           <button

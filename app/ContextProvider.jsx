@@ -15,7 +15,6 @@ function ContextProvider({ children }) {
   const [showPanel, setShowPanel] = useState(false);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [transactions, setTransactions] = useState([]);
   const isFetched = useRef(false);
 
   useEffect(() => {
@@ -28,7 +27,6 @@ function ContextProvider({ children }) {
         const fetchedUser = await refresh();
         if (fetchedUser) {
           setUser(fetchedUser);
-          await getAllTransactions(setTransactions);
         } else {
           setUser(null);
         }
@@ -61,8 +59,6 @@ function ContextProvider({ children }) {
       value={{
         showPanel,
         setShowPanel,
-        transactions,
-        setTransactions,
         user,
         setUser,
         loading,

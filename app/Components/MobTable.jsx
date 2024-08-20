@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { updateTransaction, deleteTransaction } from "@/lib/api";
-import { useGlobalContext } from "../ContextProvider";
 import { MdClose, MdDelete, MdEdit, MdSave, MdSearch } from "react-icons/md";
 import { toast } from "react-hot-toast";
 
-const MobTable = () => {
-  const { transactions, setTransactions } = useGlobalContext();
+const MobTable = ({ transactions, setTransactions }) => {
   const [editingRowId, setEditingRowId] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
   const [searchInputs, setSearchInputs] = useState({

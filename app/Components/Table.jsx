@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { updateTransaction, deleteTransaction } from "@/lib/api";
-import { useGlobalContext } from "../ContextProvider";
-import { rule } from "postcss";
 import { MdDelete, MdEdit, MdSave } from "react-icons/md";
 
-const Table = () => {
-  const { transactions, setTransactions } = useGlobalContext();
+const Table = ({ transactions, setTransactions }) => {
   const [editingRowId, setEditingRowId] = useState(null);
   const [searchInputs, setSearchInputs] = useState({
     startDate: "",

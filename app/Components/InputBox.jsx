@@ -3,11 +3,10 @@ import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useGlobalContext } from "../ContextProvider";
 import "react-datepicker/dist/react-datepicker.css";
-import { toast } from "react-hot-toast";
 import { createTransaction } from "@/lib/api";
 
-const InputBox = () => {
-  const { setShowPanel, transactions, setTransactions } = useGlobalContext();
+const InputBox = ({ transactions, setTransactions }) => {
+  const { setShowPanel } = useGlobalContext();
   const [type, setType] = useState("Expense");
   const [errorMessage, setErrorMessage] = useState("");
   const [fromTo, setFromTo] = useState("");
